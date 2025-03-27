@@ -1,0 +1,39 @@
+package main
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	file, err := os.OpenFile("example.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0644)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	defer file.Close()
+	content := "Helllo this is NSB from TYBCA"
+	if _, err := file.WriteString(content); err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	fmt.Println("Content appended successfully.")
+}
+
+q2.
+package main
+import "fmt"
+
+func main() {
+    c := make(chan int)
+    go func() {
+        for i := 1; i <= 10; i++ {
+            c <- i
+        }
+        close(c)
+    }()
+
+    for v := range c {
+        fmt.Println(v)
+    }
+    fmt.Println("Channel Closed Successfully")
+}
