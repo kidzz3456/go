@@ -1,0 +1,41 @@
+package main
+
+import "fmt"
+
+func main() {
+	var input int
+	fmt.Print("Enter a number:")
+	fmt.Scanln(&input)
+
+	sum := sumDig(input)
+	fmt.Println("Sum of digits:", sum)
+}
+
+func sumDig(n int) int {
+	if n < 10 {
+		return n
+	}
+	return n%10 + sumDig(n/10)
+}
+
+q2.
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func main() {
+	var size int
+	fmt.Println("Enter the size of the array:")
+	fmt.Scanln(&size)
+	arr := make([]int, size)
+	fmt.Println("Enter array elements:")
+	for i := 0; i < size; i++ {
+		fmt.Printf("Enter element %d: ", i+1)
+		fmt.Scanln(&arr[i])
+	}
+	sort.Ints(arr)
+	fmt.Println("Sorted array in ascending order:", arr)
+}
