@@ -1,0 +1,28 @@
+(blinking of light).
+
+Hardware Requirement.
+
+-Rasberry pi kit
+-Monitor
+-key board
+-Mouse.
+
+Software Requirement:
+
+→Rasberry os
+→Thonny
+
+Circuit diagram:
+
+
+
+import RPi. GPIO as GPIO
+import time
+GPIO. Setwarnings (False)
+GPIO setmode (GPIO BCM)
+GPIP. Setup (4, GPIO Out)
+While true:
+GPIO. Output (4 , GPIO .HIGH)
+time. sleep (1)
+GPIO. Output (4, GPIO.LOW)
+time. sleep (1)
