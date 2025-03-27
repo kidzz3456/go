@@ -1,0 +1,31 @@
+buzzer
+
+Hardware Requirement.
+
+-Rasberry pi kit
+-Monitor
+-key board
+-Mouse.
+
+Software Requirement:
+
+→Rasberry os
+→Thonny
+
+Circuit diagram:
+
+
+
+Buzzer :
+
+import RPi.GPIO as GPIO
+import time.
+GPIO. setmode (GPIO.BCM)
+GPIO. Setwarnings (False)
+BUZZER = 23
+buzzState = False
+GPIO. Setup (BUZZER, GPIO.OUT)
+While True:
+buzzState = not buzzState
+GPIO. Output ( BUZZER, buzzState)
+time.sleep(1)
