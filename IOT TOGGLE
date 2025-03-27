@@ -1,0 +1,45 @@
+toggle
+
+Hardware Requirement.
+
+-Rasberry pi kit
+-Monitor
+-key board
+-Mouse.
+
+Software Requirement:
+
+→Rasberry os
+→Thonny
+
+Circuit diagram:
+
+
+
+
+
+
+import RPi. GPIO as GPIO
+import time.
+GPIO Setmode (GIPIO Bert)
+
+LE01 PIN = 17
+LED2-PIN = 27
+GPIO Setpup ( LED1 PIN, GPIO OUT)
+GPID Setup (LED2_PIN, GPIO-OUT)
+try:
+While True:
+#turn on Led 1 & turn off LED 2
+GPIO.Output (LED1_PIN, GPIO. HIGH)
+GPIO. Output (LED2_PIN, GPIO. LOW)
+Print ("LED1 ON, LED2 OFF")
+time sleep (1)
+
+GPIO. Output ( LED1_PIN, GPIO. LOW)
+GPIO. Output ( LED2_PIN, GPIO. HIGH)
+Print(" LED1 OFF, LFD2 of ON ")
+time. steep (1)
+
+except keyboard Interrupt:
+GPIO. Cleanup()
+Print(" Program exited cleanly")
