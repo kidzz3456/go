@@ -1,0 +1,76 @@
+package main
+import "fmt"
+
+func isPalindrome(n int) int {
+    var rev, rem, org int
+    rev = 0
+    org = n
+    for(n != 0) {
+        rem = n % 10
+        rev = rev * 10 + rem
+        n /= 10
+    }
+    if (org == rev) {
+        return 1
+    } else {
+        return 0
+    }
+}
+
+func main(){
+    var n, r int
+    fmt.Print("Enter the number: ")
+    fmt.Scanln(&n)
+    r = isPalindrome(n)
+    if (r == 1) {
+        fmt.Printf("%d is a Palidrome number.\n", n)
+    } else {
+        fmt.Printf("%d is not a Palindrome number.\n", n)
+    }
+ }
+
+ q2.
+ package main
+
+import (
+	"fmt"
+)
+
+type shape interface {
+	area() float32
+	vol() float32
+}
+
+type square struct {
+	side float32
+}
+
+func (s square) area() float32 {
+	return s.side * s.side
+}
+
+func (s square) vol() float32 {
+	return s.side * s.side * s.side
+}
+
+type rectangle struct {
+	l, w, h float32
+}
+
+func (r rectangle) area() float32 {
+	return r.l * r.w
+}
+
+func (r rectangle) vol() float32 {
+	return r.l * r.w * r.h
+}
+
+func main() {
+	sqr := square{side: 5}
+	rect := rectangle{l: 4, w: 6, h: 3}
+
+	fmt.Println("Area of Square:", sqr.area())
+	fmt.Println("Volume of Cube:", sqr.vol())
+	fmt.Println("Area of Rectangle:", rect.area())
+	fmt.Println("Volume of Cuboid:", rect.vol())
+}
